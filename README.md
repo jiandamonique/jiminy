@@ -74,3 +74,26 @@ Plain HTML, CSS, and JavaScript. No frameworks. No dependencies. One file.
 MIT — free to use, fork, and build on.
 
 
+
+
+
+
+<!-- jiminy nav bar ā€” paste anywhere in your HTML -->
+<style>
+.j-nav { font-family: sans-serif; font-size: 13px; background: #FAF7F2; border: 0.5px solid rgba(160,140,110,0.25); border-radius: 8px; padding: 10px 20px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.j-nav a { color: #1a6b9a; text-decoration: none; padding: 2px 0; }
+.j-nav a:hover { text-decoration: underline; color: #C17F4A; }
+.j-nav-sep { color: #C4A47E; font-size: 11px; }
+</style>
+
+<nav class="j-nav">
+  <a href="https://github.com/jiandamonique" target="_blank">github</a>
+  <span class="j-nav-sep">|</span>
+  <a href="https://jiandamonique.github.io/" target="_blank">homepage</a>
+  <span class="j-nav-sep">|</span>
+  <a href="https://jiandamonique.github.io/jiminy/jiminy.html" target="_blank">jiminy</a>
+  <span class="j-nav-sep">|</span>
+  <a href="https://github.com/jiandamonique/kaggle-google-mutual-aid-devpage" target="_blank">kaggle project</a>
+  <span class="j-nav-sep">|</span>
+  <a href="https://books2read.com/mybeautifuldevice" target="_blank">novel</a>
+</nav>
