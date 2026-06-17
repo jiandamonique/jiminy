@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +22,11 @@
   .j-hero-label { font-size: 11px; letter-spacing: 0.18em; color: #2E5A2E; opacity: 0.5; font-family: sans-serif; }
   .j-body { padding: 20px 24px 8px; text-align: center; }
   .j-greeting { font-size: 13px; color: var(--j-warm-dark); font-style: italic; margin-bottom: 4px; }
-  .j-mantra { font-size: 11px; color: var(--j-stone); letter-spacing: 0.04em; min-height: 16px; margin-bottom: 12px; font-family: sans-serif; cursor: pointer; }
-  .j-mantra:hover { opacity: 0.7; }
+  .j-mantra-wrap { display: inline-flex; align-items: center; gap: 5px; margin-bottom: 12px; cursor: pointer; }
+  .j-mantra-wrap:hover .j-mantra { opacity: 0.7; }
+  .j-mantra-wrap:hover .j-edit-hint { opacity: 1; }
+  .j-mantra { font-size: 11px; color: var(--j-stone); letter-spacing: 0.04em; font-family: sans-serif; border-bottom: 0.5px dashed rgba(140,136,128,0.4); padding-bottom: 1px; }
+  .j-edit-hint { font-size: 9px; color: var(--j-stone); opacity: 0.4; font-family: sans-serif; transition: opacity 0.2s; }
   .j-time { font-size: 56px; font-weight: 400; color: var(--j-time); letter-spacing: -2px; line-height: 1; font-family: Georgia, serif; }
   .j-date { font-size: 11px; color: var(--j-stone); margin-top: 6px; letter-spacing: 0.07em; font-family: sans-serif; }
   .j-divider { height: 0.5px; background: var(--j-border); margin: 16px 24px; }
@@ -43,6 +47,37 @@
   .j-chip { font-family: sans-serif; font-size: 11px; padding: 3px 10px; border: 0.5px solid var(--j-border); border-radius: 10px; background: transparent; color: var(--j-stone); cursor: pointer; }
   .j-chip:hover { background: var(--j-warm-light); color: var(--j-warm-dark); }
   .j-divider2 { height: 0.5px; background: var(--j-border); margin: 12px 24px; }
+  .j-widgets-row { display: flex; justify-content: center; padding: 8px 24px; }
+  .j-widgets-toggle { font-family: sans-serif; font-size: 10px; color: var(--j-stone); letter-spacing: 0.08em; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 16px; background: transparent; cursor: pointer; }
+  .j-widgets-toggle:hover { color: var(--j-warm-dark); background: var(--j-warm-light); }
+  .j-widgets { display: none; padding: 4px 24px 16px; }
+  .j-widgets.open { display: block; }
+  .j-widget-tabs { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
+  .j-tab { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid var(--j-border); border-radius: 10px; background: transparent; color: var(--j-stone); cursor: pointer; }
+  .j-tab.active { background: var(--j-warm-light); color: var(--j-warm-dark); border-color: var(--j-warm); }
+  .j-widget-panel { display: none; }
+  .j-widget-panel.active { display: block; }
+  .j-weather { text-align: center; }
+  .j-weather-main { font-size: 28px; color: var(--j-time); font-family: Georgia, serif; }
+  .j-weather-sub { font-size: 11px; color: var(--j-stone); font-family: sans-serif; margin-top: 4px; }
+  .j-weather-input { display: flex; gap: 6px; justify-content: center; margin-top: 10px; }
+  .j-weather-input input { font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 10px; background: transparent; color: var(--j-time); width: 140px; outline: none; }
+  .j-weather-input button { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid rgba(160,130,90,0.3); border-radius: 10px; background: transparent; color: var(--j-warm-dark); cursor: pointer; }
+  .j-weather-input button:hover { background: var(--j-warm-light); }
+  .j-quote { text-align: center; }
+  .j-quote-text { font-size: 13px; color: var(--j-time); font-family: Georgia, serif; font-style: italic; line-height: 1.6; }
+  .j-quote-author { font-size: 10px; color: var(--j-stone); font-family: sans-serif; margin-top: 6px; letter-spacing: 0.06em; }
+  .j-quote-btn { display: block; margin: 10px auto 0; font-family: sans-serif; font-size: 10px; color: var(--j-stone); background: transparent; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 3px 10px; cursor: pointer; }
+  .j-quote-btn:hover { background: var(--j-warm-light); }
+  .j-task-list { list-style: none; margin-bottom: 8px; }
+  .j-task-list li { display: flex; align-items: center; gap: 8px; font-family: sans-serif; font-size: 12px; color: var(--j-time); padding: 5px 0; border-bottom: 0.5px solid var(--j-border); }
+  .j-task-list li.done span { text-decoration: line-through; color: var(--j-stone); }
+  .j-task-list li input[type=checkbox] { cursor: pointer; accent-color: var(--j-warm); }
+  .j-task-list li button { margin-left: auto; background: none; border: none; color: var(--j-stone); cursor: pointer; font-size: 14px; line-height: 1; }
+  .j-task-add { display: flex; gap: 6px; }
+  .j-task-add input { flex: 1; font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 10px; background: transparent; color: var(--j-time); outline: none; }
+  .j-task-add button { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid rgba(160,130,90,0.3); border-radius: 10px; background: transparent; color: var(--j-warm-dark); cursor: pointer; }
+  .j-task-add button:hover { background: var(--j-warm-light); }
   .j-footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 24px 16px; }
   .j-theme-row { display: flex; gap: 6px; }
   .j-swatch { width: 14px; height: 14px; border-radius: 50%; cursor: pointer; border: 1.5px solid transparent; }
@@ -53,19 +88,19 @@
   #escape-clock { font-size: 72px; font-family: Georgia, serif; color: #333; line-height: 1; }
   #escape-date { font-size: 13px; color: #aaa; margin-top: 8px; font-family: sans-serif; }
   .e-back { font-family: sans-serif; font-size: 11px; color: #ccc; background: none; border: none; cursor: pointer; margin-top: 32px; }
-  #mantra-input { display: none; font-family: sans-serif; font-size: 11px; color: var(--j-stone); border: none; border-bottom: 0.5px solid var(--j-border); background: transparent; text-align: center; width: 100%; outline: none; padding: 2px 0; letter-spacing: 0.04em; }
+  #mantra-input { display: none; font-family: sans-serif; font-size: 11px; color: var(--j-stone); border: none; border-bottom: 0.5px solid var(--j-border); background: transparent; text-align: center; width: 100%; outline: none; padding: 2px 0; letter-spacing: 0.04em; margin-bottom: 12px; }
   @media (max-width: 440px) { .j-time { font-size: 44px; } .j-timer-display { font-size: 32px; } }
 </style>
 </head>
 <body>
-
 <div id="jiminy">
-  <div class="j-hero">
-    <span class="j-hero-label">jiminy</span>
-  </div>
+  <div class="j-hero"><span class="j-hero-label">jiminy</span></div>
   <div class="j-body">
     <div class="j-greeting" id="greeting">good morning.</div>
-    <div class="j-mantra" id="mantra" onclick="editMantra()" title="tap to edit your private phrase">what do you need right now?</div>
+    <div class="j-mantra-wrap" onclick="editMantra()" title="tap to edit your private phrase">
+      <span class="j-mantra" id="mantra">what do you need right now?</span>
+      <span class="j-edit-hint">✎</span>
+    </div>
     <input type="text" id="mantra-input" maxlength="60" onblur="saveMantra()" onkeydown="if(event.key==='Enter')saveMantra()">
     <div class="j-time" id="clock">--:--</div>
     <div class="j-date" id="dateline"></div>
@@ -81,7 +116,7 @@
     </div>
     <div class="j-btn-row">
       <button class="j-btn primary" id="t-start" onclick="tStart()">start</button>
-      <button class="j-pause-symbol" id="t-pause" onclick="tPause()" disabled title="pause timer">❚❚</button>
+      <button class="j-pause-symbol" id="t-pause" onclick="tPause()" disabled>❚❚</button>
       <button class="j-btn" onclick="tReset()">reset</button>
     </div>
     <div class="j-chips">
@@ -90,6 +125,41 @@
       <button class="j-chip" onclick="tSet(15)">15m</button>
       <button class="j-chip" onclick="tSet(30)">30m</button>
       <button class="j-chip" onclick="tSet(60)">1h</button>
+    </div>
+  </div>
+  <div class="j-divider2"></div>
+  <div class="j-widgets-row">
+    <button class="j-widgets-toggle" onclick="toggleWidgets()" id="widget-toggle">+ widgets</button>
+  </div>
+  <div class="j-widgets" id="widget-area">
+    <div class="j-widget-tabs">
+      <button class="j-tab active" onclick="showTab('weather',this)">weather</button>
+      <button class="j-tab" onclick="showTab('tasks',this)">tasks</button>
+      <button class="j-tab" onclick="showTab('quote',this)">quote</button>
+    </div>
+    <div class="j-widget-panel active" id="panel-weather">
+      <div class="j-weather">
+        <div class="j-weather-main" id="weather-main">--</div>
+        <div class="j-weather-sub" id="weather-sub">enter your city — requires internet</div>
+        <div class="j-weather-input">
+          <input type="text" id="city-input" placeholder="city name" onkeydown="if(event.key==='Enter')fetchWeather()">
+          <button onclick="fetchWeather()">go</button>
+        </div>
+      </div>
+    </div>
+    <div class="j-widget-panel" id="panel-tasks">
+      <ul class="j-task-list" id="task-list"></ul>
+      <div class="j-task-add">
+        <input type="text" id="task-input" placeholder="add a task..." onkeydown="if(event.key==='Enter')addTask()">
+        <button onclick="addTask()">add</button>
+      </div>
+    </div>
+    <div class="j-widget-panel" id="panel-quote">
+      <div class="j-quote">
+        <div class="j-quote-text" id="quote-text">loading...</div>
+        <div class="j-quote-author" id="quote-author"></div>
+        <button class="j-quote-btn" onclick="newQuote()">another</button>
+      </div>
     </div>
   </div>
   <div class="j-divider2"></div>
@@ -104,7 +174,7 @@
       </div>
     </div>
     <button class="j-lotus-btn" onclick="showEscape()">
-      <svg width="28" height="28" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="28" height="28" viewBox="0 0 60 60" fill="none">
         <path d="M30 46 C28 42 20 38 16 32 C13 27 15 21 20 20 C18 16 22 12 27 14 C27 10 30 8 30 8 C30 8 33 10 33 14 C38 12 42 16 40 20 C45 21 47 27 44 32 C40 38 32 42 30 46Z" fill="#D4537E"/>
         <path d="M8 30 C10 24 16 22 20 20 C18 28 20 36 30 46 C20 42 10 38 8 30Z" fill="#ED93B1"/>
         <path d="M52 30 C50 24 44 22 40 20 C42 28 40 36 30 46 C40 42 50 38 52 30Z" fill="#ED93B1"/>
@@ -116,134 +186,42 @@
     </button>
   </div>
 </div>
-
 <div id="escape-screen">
   <div id="escape-clock">--:--</div>
   <div id="escape-date"></div>
   <button class="e-back" onclick="hideEscape()">tap anywhere to return</button>
 </div>
-
 <script>
-const themes = {
-  warm:  { hero:'linear-gradient(135deg,#D4B896,#C4A47E)', surface:'#FAF7F2', time:'#3A2C1E', stone:'#8C8880', border:'rgba(160,140,110,0.18)', light:'#F5EDE0', dark:'#7A4F28' },
-  sage:  { hero:'linear-gradient(135deg,#C8DFC8,#A8C8A8)', surface:'#F4F7F4', time:'#1E3020', stone:'#7A8C7A', border:'rgba(100,140,100,0.18)', light:'#E8F0E8', dark:'#2E5A2E' },
-  slate: { hero:'linear-gradient(135deg,#8FA8C4,#6A8FB4)', surface:'#F4F6FA', time:'#1A2535', stone:'#6A7A8C', border:'rgba(80,100,140,0.18)', light:'#E4EAF5', dark:'#2A4A7A' },
-  night: { hero:'linear-gradient(135deg,#3C3A36,#2C2C2A)', surface:'#1A1A18', time:'#F0EDE8', stone:'#888880', border:'rgba(200,180,140,0.15)', light:'#2E2C28', dark:'#D4C0A0' }
-};
-
-function setTheme(name, e) {
-  const t = themes[name];
-  document.getElementById('jiminy').style.background = t.surface;
-  document.querySelector('.j-hero').style.background = t.hero;
-  document.documentElement.style.setProperty('--j-time', t.time);
-  document.documentElement.style.setProperty('--j-stone', t.stone);
-  document.documentElement.style.setProperty('--j-surface', t.surface);
-  document.documentElement.style.setProperty('--j-border', t.border);
-  document.documentElement.style.setProperty('--j-warm-light', t.light);
-  document.documentElement.style.setProperty('--j-warm-dark', t.dark);
-  document.querySelectorAll('.j-swatch').forEach(s => s.classList.remove('active'));
-  e.target.classList.add('active');
-  localStorage.setItem('jiminy-theme', name);
-}
-
-function editMantra() {
-  const m = document.getElementById('mantra');
-  const inp = document.getElementById('mantra-input');
-  inp.value = m.textContent;
-  m.style.display = 'none';
-  inp.style.display = 'block';
-  inp.focus();
-}
-function saveMantra() {
-  const m = document.getElementById('mantra');
-  const inp = document.getElementById('mantra-input');
-  const val = inp.value.trim();
-  if (val) { m.textContent = val; localStorage.setItem('jiminy-mantra', val); }
-  inp.style.display = 'none';
-  m.style.display = 'block';
-}
-
-function pad(n) { return String(n).padStart(2,'0'); }
-function tick() {
-  const now = new Date();
-  const h24 = now.getHours(), m = now.getMinutes();
-  const ampm = h24 >= 12 ? 'pm' : 'am';
-  const h12 = h24 % 12 || 12;
-  const days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
-  const months = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-  document.getElementById('clock').textContent = h12 + ':' + pad(m);
-  document.getElementById('dateline').textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate();
-  document.getElementById('escape-clock').textContent = h12 + ':' + pad(m) + ' ' + ampm;
-  document.getElementById('escape-date').textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate();
-  document.getElementById('greeting').textContent = h24 < 12 ? 'good morning.' : h24 < 17 ? 'good afternoon.' : 'good evening.';
-}
-tick(); setInterval(tick, 1000);
-
-const savedMantra = localStorage.getItem('jiminy-mantra');
-if (savedMantra) document.getElementById('mantra').textContent = savedMantra;
-const savedTheme = localStorage.getItem('jiminy-theme');
-if (savedTheme) { const sw = document.querySelector('.j-swatch[title="'+savedTheme+'"]'); if(sw) setTheme(savedTheme, {target:sw}); }
-
-let tTotal=30*60, tLeft=30*60, tRunning=false, tInt=null;
-function tFmt(s){ return pad(Math.floor(s/60))+':'+pad(s%60); }
-function tUpdate(){ document.getElementById('tdisplay').textContent=tFmt(tLeft); }
-function alertMode(){ return document.querySelector('input[name="alert"]:checked').value; }
-function tDone(){
-  document.getElementById('tlabel').textContent='time is up';
-  document.getElementById('tdisplay').style.color='#5A8A5A';
-  if(alertMode()==='sound'){
-    try{
-      const ctx=new AudioContext();
-      [0,.35,.7].forEach(o=>{
-        const osc=ctx.createOscillator(),g=ctx.createGain();
-        osc.connect(g);g.connect(ctx.destination);
-        osc.frequency.value=740;osc.type='sine';
-        g.gain.setValueAtTime(0,ctx.currentTime+o);
-        g.gain.linearRampToValueAtTime(0.3,ctx.currentTime+o+.06);
-        g.gain.linearRampToValueAtTime(0,ctx.currentTime+o+.4);
-        osc.start(ctx.currentTime+o);osc.stop(ctx.currentTime+o+.5);
-      });
-    }catch(e){}
-  }
-  if(alertMode()==='vibrate'&&navigator.vibrate) navigator.vibrate([300,100,300,100,300]);
-}
-function tStart(){
-  if(tRunning)return; tRunning=true;
-  document.getElementById('t-start').disabled=true;
-  document.getElementById('t-pause').disabled=false;
-  document.getElementById('tlabel').textContent='running...';
-  document.getElementById('tdisplay').style.color='var(--j-time)';
-  tInt=setInterval(()=>{ tLeft--; tUpdate(); if(tLeft<=0){clearInterval(tInt);tRunning=false;tDone();} },1000);
-}
-function tPause(){
-  clearInterval(tInt);tRunning=false;
-  document.getElementById('t-start').disabled=false;
-  document.getElementById('t-pause').disabled=true;
-  document.getElementById('tlabel').textContent='paused';
-}
-function tReset(){
-  clearInterval(tInt);tRunning=false;tLeft=tTotal;tUpdate();
-  document.getElementById('t-start').disabled=false;
-  document.getElementById('t-pause').disabled=true;
-  document.getElementById('tlabel').textContent='timer';
-  document.getElementById('tdisplay').style.color='var(--j-time)';
-}
-function tSet(min){
-  clearInterval(tInt);tRunning=false;tTotal=min*60;tLeft=tTotal;tUpdate();
-  document.getElementById('t-start').disabled=false;
-  document.getElementById('t-pause').disabled=true;
-  document.getElementById('tlabel').textContent='timer';
-  document.getElementById('tdisplay').style.color='var(--j-time)';
-}
-function showEscape(){
-  document.getElementById('jiminy').style.display='none';
-  document.getElementById('escape-screen').style.display='flex';
-}
-function hideEscape(){
-  document.getElementById('escape-screen').style.display='none';
-  document.getElementById('jiminy').style.display='block';
-}
-document.getElementById('escape-screen').addEventListener('click', hideEscape);
+const themes={warm:{hero:'linear-gradient(135deg,#D4B896,#C4A47E)',surface:'#FAF7F2',time:'#3A2C1E',stone:'#8C8880',border:'rgba(160,140,110,0.18)',light:'#F5EDE0',dark:'#7A4F28'},sage:{hero:'linear-gradient(135deg,#C8DFC8,#A8C8A8)',surface:'#F4F7F4',time:'#1E3020',stone:'#7A8C7A',border:'rgba(100,140,100,0.18)',light:'#E8F0E8',dark:'#2E5A2E'},slate:{hero:'linear-gradient(135deg,#8FA8C4,#6A8FB4)',surface:'#F4F6FA',time:'#1A2535',stone:'#6A7A8C',border:'rgba(80,100,140,0.18)',light:'#E4EAF5',dark:'#2A4A7A'},night:{hero:'linear-gradient(135deg,#3C3A36,#2C2C2A)',surface:'#1A1A18',time:'#F0EDE8',stone:'#888880',border:'rgba(200,180,140,0.15)',light:'#2E2C28',dark:'#D4C0A0'}};
+function setTheme(name,e){const t=themes[name];document.getElementById('jiminy').style.background=t.surface;document.querySelector('.j-hero').style.background=t.hero;document.documentElement.style.setProperty('--j-time',t.time);document.documentElement.style.setProperty('--j-stone',t.stone);document.documentElement.style.setProperty('--j-surface',t.surface);document.documentElement.style.setProperty('--j-border',t.border);document.documentElement.style.setProperty('--j-warm-light',t.light);document.documentElement.style.setProperty('--j-warm-dark',t.dark);document.querySelectorAll('.j-swatch').forEach(s=>s.classList.remove('active'));e.target.classList.add('active');localStorage.setItem('jiminy-theme',name);}
+function editMantra(){const w=document.querySelector('.j-mantra-wrap'),inp=document.getElementById('mantra-input');inp.value=document.getElementById('mantra').textContent;w.style.display='none';inp.style.display='block';inp.focus();}
+function saveMantra(){const w=document.querySelector('.j-mantra-wrap'),inp=document.getElementById('mantra-input');const v=inp.value.trim();if(v){document.getElementById('mantra').textContent=v;localStorage.setItem('jiminy-mantra',v);}inp.style.display='none';w.style.display='inline-flex';}
+function pad(n){return String(n).padStart(2,'0');}
+function tick(){const now=new Date(),h24=now.getHours(),m=now.getMinutes();const ampm=h24>=12?'pm':'am',h12=h24%12||12;const days=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];const months=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];document.getElementById('clock').textContent=h12+':'+pad(m);document.getElementById('dateline').textContent=days[now.getDay()]+', '+months[now.getMonth()]+' '+now.getDate();document.getElementById('escape-clock').textContent=h12+':'+pad(m)+' '+ampm;document.getElementById('escape-date').textContent=days[now.getDay()]+', '+months[now.getMonth()]+' '+now.getDate();document.getElementById('greeting').textContent=h24<12?'good morning.':h24<17?'good afternoon.':'good evening.';}
+tick();setInterval(tick,1000);
+const sm=localStorage.getItem('jiminy-mantra');if(sm)document.getElementById('mantra').textContent=sm;
+const st=localStorage.getItem('jiminy-theme');if(st){const sw=document.querySelector('.j-swatch[title="'+st+'"]');if(sw)setTheme(st,{target:sw});}
+let tTotal=30*60,tLeft=30*60,tRunning=false,tInt=null;
+function tFmt(s){return pad(Math.floor(s/60))+':'+pad(s%60);}
+function tUpdate(){document.getElementById('tdisplay').textContent=tFmt(tLeft);}
+function alertMode(){return document.querySelector('input[name="alert"]:checked').value;}
+function tDone(){document.getElementById('tlabel').textContent='time is up';document.getElementById('tdisplay').style.color='#5A8A5A';if(alertMode()==='sound'){try{const ctx=new AudioContext();[0,.35,.7].forEach(o=>{const osc=ctx.createOscillator(),g=ctx.createGain();osc.connect(g);g.connect(ctx.destination);osc.frequency.value=740;osc.type='sine';g.gain.setValueAtTime(0,ctx.currentTime+o);g.gain.linearRampToValueAtTime(0.3,ctx.currentTime+o+.06);g.gain.linearRampToValueAtTime(0,ctx.currentTime+o+.4);osc.start(ctx.currentTime+o);osc.stop(ctx.currentTime+o+.5);});}catch(e){}}if(alertMode()==='vibrate'&&navigator.vibrate)navigator.vibrate([300,100,300,100,300]);}
+function tStart(){if(tRunning)return;tRunning=true;document.getElementById('t-start').disabled=true;document.getElementById('t-pause').disabled=false;document.getElementById('tlabel').textContent='running...';document.getElementById('tdisplay').style.color='var(--j-time)';tInt=setInterval(()=>{tLeft--;tUpdate();if(tLeft<=0){clearInterval(tInt);tRunning=false;tDone();}},1000);}
+function tPause(){clearInterval(tInt);tRunning=false;document.getElementById('t-start').disabled=false;document.getElementById('t-pause').disabled=true;document.getElementById('tlabel').textContent='paused';}
+function tReset(){clearInterval(tInt);tRunning=false;tLeft=tTotal;tUpdate();document.getElementById('t-start').disabled=false;document.getElementById('t-pause').disabled=true;document.getElementById('tlabel').textContent='timer';document.getElementById('tdisplay').style.color='var(--j-time)';}
+function tSet(min){clearInterval(tInt);tRunning=false;tTotal=min*60;tLeft=tTotal;tUpdate();document.getElementById('t-start').disabled=false;document.getElementById('t-pause').disabled=true;document.getElementById('tlabel').textContent='timer';document.getElementById('tdisplay').style.color='var(--j-time)';}
+function toggleWidgets(){const a=document.getElementById('widget-area'),t=document.getElementById('widget-toggle');const open=a.classList.toggle('open');t.textContent=open?'− widgets':'+ widgets';if(open&&document.getElementById('quote-text').textContent==='loading...')newQuote();}
+function showTab(name,el){document.querySelectorAll('.j-widget-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.j-tab').forEach(t=>t.classList.remove('active'));document.getElementById('panel-'+name).classList.add('active');el.classList.add('active');}
+async function fetchWeather(){const city=document.getElementById('city-input').value.trim();if(!city)return;document.getElementById('weather-main').textContent='...';document.getElementById('weather-sub').textContent='fetching';try{const r=await fetch(`https://wttr.in/${encodeURIComponent(city)}?format=j1`);const d=await r.json();const cur=d.current_condition[0];document.getElementById('weather-main').textContent=cur.temp_F+'°F / '+cur.temp_C+'°C';document.getElementById('weather-sub').textContent=cur.weatherDesc[0].value.toLowerCase()+' in '+city;}catch(e){document.getElementById('weather-main').textContent='--';document.getElementById('weather-sub').textContent='could not fetch — check connection or city name';}}
+let tasks=[];
+function renderTasks(){const ul=document.getElementById('task-list');ul.innerHTML='';tasks.forEach((t,i)=>{const li=document.createElement('li');if(t.done)li.classList.add('done');const cb=document.createElement('input');cb.type='checkbox';cb.checked=t.done;cb.onchange=()=>{tasks[i].done=cb.checked;renderTasks();};const sp=document.createElement('span');sp.textContent=t.text;const del=document.createElement('button');del.textContent='×';del.onclick=()=>{tasks.splice(i,1);renderTasks();};li.appendChild(cb);li.appendChild(sp);li.appendChild(del);ul.appendChild(li);});}
+function addTask(){const inp=document.getElementById('task-input');const v=inp.value.trim();if(!v)return;tasks.push({text:v,done:false});inp.value='';renderTasks();}
+const quotes=[{text:'You are allowed to be both a masterpiece and a work in progress.',author:'sophia bush'},{text:'Breathe. You are exactly where you need to be.',author:''},{text:'Rest if you must, but do not quit.',author:''},{text:'Small steps every day.',author:''},{text:'You have survived every hard day so far.',author:''},{text:'One thing at a time.',author:''},{text:'Steady.',author:''},{text:'Progress, not perfection.',author:''},{text:'You are doing the job.',author:''},{text:'What you do today matters.',author:''}];
+let lastQuote=-1;
+function newQuote(){let i;do{i=Math.floor(Math.random()*quotes.length);}while(i===lastQuote);lastQuote=i;document.getElementById('quote-text').textContent=quotes[i].text;document.getElementById('quote-author').textContent=quotes[i].author?'— '+quotes[i].author:'';}
+function showEscape(){document.getElementById('jiminy').style.display='none';document.getElementById('escape-screen').style.display='flex';}
+function hideEscape(){document.getElementById('escape-screen').style.display='none';document.getElementById('jiminy').style.display='block';}
+document.getElementById('escape-screen').addEventListener('click',hideEscape);
 </script>
 </body>
 </html>
