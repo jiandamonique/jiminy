@@ -1,5 +1,7 @@
-# jiminy
-A quiet work companion for gig and remote workers — runs anywhere, one file, no install.
+# Jiminy
+
+> A quiet work companion for gig and remote workers.
+
 **Status: Work in progress. The beta testers are road testing.**
 
 ---
@@ -75,6 +77,31 @@ MIT — free to use, fork, and build on.
 
 
 
+---
 
+## your data & offline use
 
- 
+Jiminy stores your theme and private phrase locally in your browser. This means:
+
+- **Power outage or restart** — your settings come back when you reopen Jiminy. You're fine.
+- **Browser data cleared** — settings reset to default. Your phrase is gone.
+- **Different browser or device** — starts fresh. Settings don't travel yet.
+
+**To make your phrase permanent:** open `jiminy.html` in a text editor, find the line that says `what do you need right now?` and replace it with your phrase. Save the file. Now it's baked in and survives anything.
+
+Cross-device sync is on the roadmap for a future version.
+
+---
+
+## where to use Jiminy
+
+Jiminy runs anywhere you can open a file or a link:
+
+- **Local file** — download and double-click on any computer
+- **GitHub Pages** — host free, share a link
+- **Google Drive or iCloud** — open from your cloud storage
+- **Notion** — embed the GitHub Pages link as a web bookmark or full-width embed
+- **New browser tab** — set it as your new tab page or just keep it pinned
+- **Any dashboard** — drop the link or file anywhere you already work
+
+Same file. Same experience. Everywhere.
