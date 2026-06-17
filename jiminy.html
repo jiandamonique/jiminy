@@ -7,16 +7,16 @@
 <title>Jiminy</title>
 <style>
   :root {
-    --j-warm: #C17F4A;
-    --j-warm-light: #F5EDE0;
-    --j-warm-dark: #7A4F28;
+    --j-warm: #A89880;
+    --j-warm-light: #EDEAE4;
+    --j-warm-dark: #6A6560;
     --j-stone: #8C8880;
-    --j-surface: #FAF7F2;
-    --j-border: rgba(160,140,110,0.18);
-    --j-time: #3A2C1E;
+    --j-surface: #F2F0EC;
+    --j-border: rgba(160,156,148,0.2);
+    --j-time: #2C2C2A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { min-height: 100vh; font-family: Georgia, serif; background: #EDE8DF; display: flex; align-items: center; justify-content: center; }
+  html, body { min-height: 100vh; font-family: Georgia, serif; background: #C6C4BE; display: flex; align-items: center; justify-content: center; }
   #jiminy { background: var(--j-surface); border: 0.5px solid var(--j-border); border-radius: 20px; overflow: hidden; width: 100%; max-width: 420px; margin: 16px; }
   .j-hero { height: 80px; background: linear-gradient(135deg, #C8DFC8, #A8C8A8); display: flex; align-items: center; justify-content: center; }
   .j-hero-label { font-size: 11px; letter-spacing: 0.18em; color: #2E5A2E; opacity: 0.5; font-family: sans-serif; }
@@ -36,7 +36,7 @@
   .j-alert-row { display: flex; gap: 10px; justify-content: center; align-items: center; margin: 8px 0; }
   .j-alert-row label { font-family: sans-serif; font-size: 11px; color: var(--j-stone); display: flex; align-items: center; gap: 3px; cursor: pointer; }
   .j-btn-row { display: flex; gap: 8px; justify-content: center; margin: 10px 0 8px; align-items: center; }
-  .j-btn { font-family: sans-serif; font-size: 12px; padding: 6px 18px; border: 0.5px solid rgba(160,130,90,0.3); border-radius: 20px; background: transparent; color: var(--j-warm-dark); cursor: pointer; transition: background 0.15s; }
+  .j-btn { font-family: sans-serif; font-size: 12px; padding: 6px 18px; border: 0.5px solid rgba(160,156,148,0.35); border-radius: 20px; background: transparent; color: var(--j-warm-dark); cursor: pointer; transition: background 0.15s; }
   .j-btn:hover { background: var(--j-warm-light); }
   .j-btn:disabled { opacity: 0.3; cursor: default; }
   .j-btn.primary { background: var(--j-warm-light); }
@@ -47,9 +47,14 @@
   .j-chip { font-family: sans-serif; font-size: 11px; padding: 3px 10px; border: 0.5px solid var(--j-border); border-radius: 10px; background: transparent; color: var(--j-stone); cursor: pointer; }
   .j-chip:hover { background: var(--j-warm-light); color: var(--j-warm-dark); }
   .j-divider2 { height: 0.5px; background: var(--j-border); margin: 12px 24px; }
-  .j-widgets-row { display: flex; justify-content: center; padding: 8px 24px; }
+  .j-seek-row { padding: 4px 24px 8px; }
+  .j-seek-input { width: 100%; font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 12px; padding: 5px 12px; background: var(--j-warm-light); color: var(--j-time); outline: none; }
+  .j-seek-input::placeholder { color: #B4B2AC; font-style: italic; }
+  .j-widgets-row { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 6px 24px; }
   .j-widgets-toggle { font-family: sans-serif; font-size: 10px; color: var(--j-stone); letter-spacing: 0.08em; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 16px; background: transparent; cursor: pointer; }
   .j-widgets-toggle:hover { color: var(--j-warm-dark); background: var(--j-warm-light); }
+  .j-tab-link { font-family: sans-serif; font-size: 10px; color: var(--j-stone); opacity: 0.5; text-decoration: none; letter-spacing: 0.06em; }
+  .j-tab-link:hover { opacity: 1; color: var(--j-warm-dark); }
   .j-widgets { display: none; padding: 4px 24px 16px; }
   .j-widgets.open { display: block; }
   .j-widget-tabs { display: flex; gap: 6px; justify-content: center; margin-bottom: 12px; }
@@ -61,8 +66,8 @@
   .j-weather-main { font-size: 28px; color: var(--j-time); font-family: Georgia, serif; }
   .j-weather-sub { font-size: 11px; color: var(--j-stone); font-family: sans-serif; margin-top: 4px; }
   .j-weather-input { display: flex; gap: 6px; justify-content: center; margin-top: 10px; }
-  .j-weather-input input { font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 10px; background: transparent; color: var(--j-time); width: 140px; outline: none; }
-  .j-weather-input button { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid rgba(160,130,90,0.3); border-radius: 10px; background: transparent; color: var(--j-warm-dark); cursor: pointer; }
+  .j-weather-input input { font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 10px; background: var(--j-warm-light); color: var(--j-time); width: 140px; outline: none; }
+  .j-weather-input button { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid var(--j-border); border-radius: 10px; background: transparent; color: var(--j-warm-dark); cursor: pointer; }
   .j-weather-input button:hover { background: var(--j-warm-light); }
   .j-quote { text-align: center; }
   .j-quote-text { font-size: 13px; color: var(--j-time); font-family: Georgia, serif; font-style: italic; line-height: 1.6; }
@@ -75,13 +80,13 @@
   .j-task-list li input[type=checkbox] { cursor: pointer; accent-color: var(--j-warm); }
   .j-task-list li button { margin-left: auto; background: none; border: none; color: var(--j-stone); cursor: pointer; font-size: 14px; line-height: 1; }
   .j-task-add { display: flex; gap: 6px; }
-  .j-task-add input { flex: 1; font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 10px; background: transparent; color: var(--j-time); outline: none; }
-  .j-task-add button { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid rgba(160,130,90,0.3); border-radius: 10px; background: transparent; color: var(--j-warm-dark); cursor: pointer; }
+  .j-task-add input { flex: 1; font-family: sans-serif; font-size: 11px; border: 0.5px solid var(--j-border); border-radius: 10px; padding: 4px 10px; background: var(--j-warm-light); color: var(--j-time); outline: none; }
+  .j-task-add button { font-family: sans-serif; font-size: 11px; padding: 4px 12px; border: 0.5px solid var(--j-border); border-radius: 10px; background: transparent; color: var(--j-warm-dark); cursor: pointer; }
   .j-task-add button:hover { background: var(--j-warm-light); }
   .j-footer { display: flex; align-items: center; justify-content: space-between; padding: 10px 24px 16px; }
   .j-theme-row { display: flex; gap: 6px; }
   .j-swatch { width: 14px; height: 14px; border-radius: 50%; cursor: pointer; border: 1.5px solid transparent; }
-  .j-swatch.active { border-color: #3A2C1E; }
+  .j-swatch.active { border-color: #4A4A48; }
   .j-lotus-btn { font-family: sans-serif; font-size: 11px; color: #993556; border: 0.5px solid rgba(212,83,126,0.25); border-radius: 12px; padding: 5px 14px 5px 8px; background: transparent; cursor: pointer; display: flex; align-items: center; gap: 6px; }
   .j-lotus-btn:hover { background: #FBEAF0; }
   #escape-screen { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f9f9f9; flex-direction: column; align-items: center; justify-content: center; }
@@ -128,8 +133,12 @@
     </div>
   </div>
   <div class="j-divider2"></div>
+  <div class="j-seek-row">
+    <input class="j-seek-input" type="text" id="seek-input" placeholder="seek" onkeydown="if(event.key==='Enter')askGoogle()">
+  </div>
   <div class="j-widgets-row">
     <button class="j-widgets-toggle" onclick="toggleWidgets()" id="widget-toggle">+ widgets</button>
+    <a class="j-tab-link" href="https://jiandamonique.github.io/jiminy/jiminy.html" target="_blank">tab</a>
   </div>
   <div class="j-widgets" id="widget-area">
     <div class="j-widget-tabs">
@@ -167,10 +176,10 @@
     <div>
       <div style="font-size:10px;color:var(--j-stone);font-family:sans-serif;margin-bottom:5px;">theme</div>
       <div class="j-theme-row">
-        <div class="j-swatch active" style="background:#D4B896;" onclick="setTheme('warm',event)" title="warm"></div>
-        <div class="j-swatch" style="background:#A8BFA8;" onclick="setTheme('sage',event)" title="sage"></div>
-        <div class="j-swatch" style="background:#8FA8C4;" onclick="setTheme('slate',event)" title="slate"></div>
-        <div class="j-swatch" style="background:#2C2C2A;" onclick="setTheme('night',event)" title="night"></div>
+        <div class="j-swatch active" style="background:#A8BFA8;" onclick="setTheme('sage',event)" title="sage"></div>
+        <div class="j-swatch" style="background:#8A9CB0;" onclick="setTheme('wildslate',event)" title="wildslate"></div>
+        <div class="j-swatch" style="background:#C4A0A8;" onclick="setTheme('mauve',event)" title="mauve"></div>
+        <div class="j-swatch" style="background:#0A0F0A;" onclick="setTheme('night',event)" title="night"></div>
       </div>
     </div>
     <button class="j-lotus-btn" onclick="showEscape()">
@@ -192,7 +201,14 @@
   <button class="e-back" onclick="hideEscape()">tap anywhere to return</button>
 </div>
 <script>
-const themes={warm:{hero:'linear-gradient(135deg,#D4B896,#C4A47E)',surface:'#FAF7F2',time:'#3A2C1E',stone:'#8C8880',border:'rgba(160,140,110,0.18)',light:'#F5EDE0',dark:'#7A4F28'},sage:{hero:'linear-gradient(135deg,#C8DFC8,#A8C8A8)',surface:'#F4F7F4',time:'#1E3020',stone:'#7A8C7A',border:'rgba(100,140,100,0.18)',light:'#E8F0E8',dark:'#2E5A2E'},slate:{hero:'linear-gradient(135deg,#8FA8C4,#6A8FB4)',surface:'#F4F6FA',time:'#1A2535',stone:'#6A7A8C',border:'rgba(80,100,140,0.18)',light:'#E4EAF5',dark:'#2A4A7A'},night:{hero:'linear-gradient(135deg,#3C3A36,#2C2C2A)',surface:'#1A1A18',time:'#F0EDE8',stone:'#888880',border:'rgba(200,180,140,0.15)',light:'#2E2C28',dark:'#D4C0A0'}};
+const themes={
+  silver:{ hero:'linear-gradient(135deg,#C8DFC8,#A8C8A8)', surface:'#F2F0EC', time:'#2C2C2A', stone:'#8C8880', border:'rgba(160,156,148,0.2)', light:'#EDEAE4', dark:'#6A6560' },
+  sage:{   hero:'linear-gradient(135deg,#C8DFC8,#A8C8A8)', surface:'#F4F7F4', time:'#1E3020', stone:'#7A8C7A', border:'rgba(100,140,100,0.18)', light:'#E8F0E8', dark:'#2E5A2E' },
+  slate:{  hero:'linear-gradient(135deg,#8FA8C4,#6A8FB4)', surface:'#F4F6FA', time:'#1A2535', stone:'#6A7A8C', border:'rgba(80,100,140,0.18)', light:'#E4EAF5', dark:'#2A4A7A' },
+  wildslate:{ hero:'linear-gradient(135deg,#9BB0C8,#7A9AB8)', surface:'#F2F4F8', time:'#1A2535', stone:'#7A8898', border:'rgba(90,110,150,0.18)', light:'#E4EAF2', dark:'#3A5070' },
+  mauve:{  hero:'linear-gradient(135deg,#D4A8A0,#C4A0A8)', surface:'#FBF6F5', time:'#3A2430', stone:'#9A8488', border:'rgba(180,140,140,0.2)', light:'#F0E4E4', dark:'#7A4858' },
+  night:{  hero:'linear-gradient(135deg,#0A0F0A,#111811)', surface:'#0D0D0B', time:'#00CC44', stone:'#447744', border:'rgba(0,180,60,0.15)', light:'#0F1A0F', dark:'#00AA33' }
+};
 function setTheme(name,e){const t=themes[name];document.getElementById('jiminy').style.background=t.surface;document.querySelector('.j-hero').style.background=t.hero;document.documentElement.style.setProperty('--j-time',t.time);document.documentElement.style.setProperty('--j-stone',t.stone);document.documentElement.style.setProperty('--j-surface',t.surface);document.documentElement.style.setProperty('--j-border',t.border);document.documentElement.style.setProperty('--j-warm-light',t.light);document.documentElement.style.setProperty('--j-warm-dark',t.dark);document.querySelectorAll('.j-swatch').forEach(s=>s.classList.remove('active'));e.target.classList.add('active');localStorage.setItem('jiminy-theme',name);}
 function editMantra(){const w=document.querySelector('.j-mantra-wrap'),inp=document.getElementById('mantra-input');inp.value=document.getElementById('mantra').textContent;w.style.display='none';inp.style.display='block';inp.focus();}
 function saveMantra(){const w=document.querySelector('.j-mantra-wrap'),inp=document.getElementById('mantra-input');const v=inp.value.trim();if(v){document.getElementById('mantra').textContent=v;localStorage.setItem('jiminy-mantra',v);}inp.style.display='none';w.style.display='inline-flex';}
@@ -210,13 +226,14 @@ function tStart(){if(tRunning)return;tRunning=true;document.getElementById('t-st
 function tPause(){clearInterval(tInt);tRunning=false;document.getElementById('t-start').disabled=false;document.getElementById('t-pause').disabled=true;document.getElementById('tlabel').textContent='paused';}
 function tReset(){clearInterval(tInt);tRunning=false;tLeft=tTotal;tUpdate();document.getElementById('t-start').disabled=false;document.getElementById('t-pause').disabled=true;document.getElementById('tlabel').textContent='timer';document.getElementById('tdisplay').style.color='var(--j-time)';}
 function tSet(min){clearInterval(tInt);tRunning=false;tTotal=min*60;tLeft=tTotal;tUpdate();document.getElementById('t-start').disabled=false;document.getElementById('t-pause').disabled=true;document.getElementById('tlabel').textContent='timer';document.getElementById('tdisplay').style.color='var(--j-time)';}
+function askGoogle(){const q=document.getElementById('seek-input').value.trim();if(!q)return;window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank');document.getElementById('seek-input').value='';}
 function toggleWidgets(){const a=document.getElementById('widget-area'),t=document.getElementById('widget-toggle');const open=a.classList.toggle('open');t.textContent=open?'− widgets':'+ widgets';if(open&&document.getElementById('quote-text').textContent==='loading...')newQuote();}
 function showTab(name,el){document.querySelectorAll('.j-widget-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.j-tab').forEach(t=>t.classList.remove('active'));document.getElementById('panel-'+name).classList.add('active');el.classList.add('active');}
 async function fetchWeather(){const city=document.getElementById('city-input').value.trim();if(!city)return;document.getElementById('weather-main').textContent='...';document.getElementById('weather-sub').textContent='fetching';try{const r=await fetch(`https://wttr.in/${encodeURIComponent(city)}?format=j1`);const d=await r.json();const cur=d.current_condition[0];document.getElementById('weather-main').textContent=cur.temp_F+'°F / '+cur.temp_C+'°C';document.getElementById('weather-sub').textContent=cur.weatherDesc[0].value.toLowerCase()+' in '+city;}catch(e){document.getElementById('weather-main').textContent='--';document.getElementById('weather-sub').textContent='could not fetch — check connection or city name';}}
 let tasks=[];
 function renderTasks(){const ul=document.getElementById('task-list');ul.innerHTML='';tasks.forEach((t,i)=>{const li=document.createElement('li');if(t.done)li.classList.add('done');const cb=document.createElement('input');cb.type='checkbox';cb.checked=t.done;cb.onchange=()=>{tasks[i].done=cb.checked;renderTasks();};const sp=document.createElement('span');sp.textContent=t.text;const del=document.createElement('button');del.textContent='×';del.onclick=()=>{tasks.splice(i,1);renderTasks();};li.appendChild(cb);li.appendChild(sp);li.appendChild(del);ul.appendChild(li);});}
 function addTask(){const inp=document.getElementById('task-input');const v=inp.value.trim();if(!v)return;tasks.push({text:v,done:false});inp.value='';renderTasks();}
-const quotes=[{text:'You are allowed to be both a masterpiece and a work in progress.',author:'sophia bush'},{text:'Breathe. You are exactly where you need to be.',author:''},{text:'Rest if you must, but do not quit.',author:''},{text:'Small steps every day.',author:''},{text:'You have survived every hard day so far.',author:''},{text:'One thing at a time.',author:''},{text:'Steady.',author:''},{text:'Progress, not perfection.',author:''},{text:'You are doing the job.',author:''},{text:'What you do today matters.',author:''}];
+const quotes=[{text:'You are allowed to be both a masterpiece and a work in progress.',author:'sophia bush'},{text:'Breathe. You are exactly where you need to be.',author:''},{text:'Rest if you must, but do not quit.',author:''},{text:'Small steps every day.',author:''},{text:'You have survived every hard day so far.',author:''},{text:'One thing at a time.',author:''},{text:'Steady.',author:''},{text:'Progress, not perfection.',author:''},{text:'You are doing your best.',author:''},{text:'What you do today matters.',author:''}];
 let lastQuote=-1;
 function newQuote(){let i;do{i=Math.floor(Math.random()*quotes.length);}while(i===lastQuote);lastQuote=i;document.getElementById('quote-text').textContent=quotes[i].text;document.getElementById('quote-author').textContent=quotes[i].author?'— '+quotes[i].author:'';}
 function showEscape(){document.getElementById('jiminy').style.display='none';document.getElementById('escape-screen').style.display='flex';}
