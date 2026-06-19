@@ -2,102 +2,75 @@
 
 > A quiet work companion for gig and remote workers.
 
-**Status: Work in progress. Beta testers are road testing.**
+**Status: Beta — road testing with real users.**
 
-🟢 **[→ Open Jiminy Live](https://jiandamonique.github.io/jiminy/index.html)**
-📖 **[→ Read the README / About](https://github.com/jiandamonique/jiminy#readme)**
-
----
-
-## What is Jiminy?
-
-Jiminy is a lightweight personal companion that lives in a single HTML file. No install. No login. No server. Open it on your desktop, your phone, Google Drive, iCloud, or host it on GitHub Pages — it works the same everywhere, every platform.
-
-It gives you a live clock, a countdown timer, a private mantra, and a one-tap screen to hide it if someone walks up. That's it. Calm, affirming, present.
+🟢 **[→ Open Jiminy](https://jiandamonique.github.io/jiminy/index.html)** &nbsp;·&nbsp; 📖 **[→ About (this page)](https://github.com/jiandamonique/jiminy#readme)**
 
 ---
 
-## Who is it for?
+## What it is
 
-Remote workers, gig workers, anyone in a study or work environment who needs an ally on speed dial.
+Jiminy is a single HTML file you open in a browser. No install. No login. No server. No subscription.
 
----
+It gives you a live clock, a countdown timer, a private mantra you set once and stays, and a one-tap privacy screen for when someone walks up. That's the whole thing. Calm, present, yours.
 
-## How to use it
-
-**Easiest way — just open it:** [Launch Jiminy →](https://jiandamonique.github.io/jiminy/index.html) No install needed.
-
-**Download it:** Grab `jiminy.html` and double-click to open in any browser.
-
-**Host it yourself (free):** Enable GitHub Pages on a fork and share your personal URL.
-
-**On your phone:** Save the file to iCloud or Google Drive and open it in your mobile browser.
-
-**Embed it in a dashboard:** Drop Jiminy into any existing dashboard or workspace you already use.
+It was built for people who work in public or from home and need something steady on their screen — gig workers, remote workers, people studying in coffee shops, people who just need an anchor.
 
 ---
 
-## Features (v1)
+## What it does
 
-- Live clock and date
-- Good morning / afternoon / evening greeting
-- A private motivational phrase — set it once, it saves privately on your device
-- Countdown timer with sound, silent, or vibrate alert
-- Quick timer presets: 5m, 10m, 15m, 30m, 1h
-- Four themes: warm, sage, slate, night
-- Pause screen — one tap to hide for privacy, shows a plain clock
-
----
-
-## What it is not
-
-- Not an app store app
-- Not a subscription
-- Not connected to any server
-- Not storing your data anywhere except your own device
+- **Live clock and date** — always on, updates every second
+- **Time-of-day greeting** — good morning / afternoon / evening, automatically
+- **Private mantra** — set once, saves to your device, shows up every time you open it
+- **Countdown timer** — with sound, silent, or vibrate alert
+- **Quick presets** — 5m · 10m · 15m · 30m · 1h, one tap
+- **Four themes** — warm · sage · slate · night
+- **Pause screen** — one tap to show a plain clock and hide everything else, for when someone looks over your shoulder
 
 ---
 
-## Beta
+## How to open it
 
-This is a work in progress. We are building in public. If something is broken or you have an idea, open an issue.
+The simplest way is the live link: **[jiandamonique.github.io/jiminy/index.html](https://jiandamonique.github.io/jiminy/index.html)**
 
-If you are a beta tester — thank you. Your feedback shapes what this becomes.
+From there you can also:
+
+- **Download `jiminy.html`** and double-click to open it locally — works offline, no browser needed beyond what you already have
+- **Pin it as a browser tab** — keep it open all day
+- **Save to Google Drive or iCloud** and open from your phone
+- **Embed in Notion** as a full-width web bookmark
+- **Fork this repo** and host your own version on GitHub Pages with your own mantra baked in
+
+---
+
+## Your data
+
+Jiminy keeps your theme and mantra in your browser's local storage. That means:
+
+- It comes back after you restart or lose power — your settings are local, not on a server
+- If you clear your browser data, your mantra resets
+- It doesn't follow you to a different browser or device yet (cross-device sync is on the roadmap)
+
+**To make your mantra permanent:** open `jiminy.html` in any text editor, find `what do you need right now?` and replace it with your phrase. Save the file. Now it's baked in and survives a browser wipe.
+
+---
+
+## What it isn't
+
+Not an app store app. Not a subscription. Not connected to any server. Not storing anything beyond your own device. Not tracking you.
 
 ---
 
 ## Built with
 
-Plain HTML, CSS, and JavaScript. No frameworks. No dependencies. One file.
+Vanilla HTML, CSS, and JavaScript. No frameworks. No dependencies. One file. Runs anywhere.
 
 ---
 
-## Your data & offline use
+## Beta
 
-Jiminy stores your theme and private phrase locally in your browser. This means:
-
-- **Power outage or restart** — your settings come back when you reopen Jiminy. You're fine.
-- **Browser data cleared** — settings reset to default. Your phrase is gone.
-- **Different browser or device** — starts fresh. Settings don't travel yet.
-
-**To make your phrase permanent:** open `jiminy.html` in a text editor, find the line that says `what do you need right now?` and replace it with your phrase. Save the file. Now it's baked in and survives anything.
-
-Cross-device sync is on the roadmap for a future version.
-
----
-
-## Where to use Jiminy
-
-Jiminy runs anywhere you can open a file or a link:
-
-- **Live link** — [jiandamonique.github.io/jiminy/index.html](https://jiandamonique.github.io/jiminy/index.html)
-- **Local file** — download and double-click on any computer
-- **Google Drive or iCloud** — open from your cloud storage
-- **Notion** — embed the GitHub Pages link as a web bookmark or full-width embed
-- **New browser tab** — set it as your new tab page or just keep it pinned
-- **Any dashboard** — drop the link or file anywhere you already work
-
-Same file. Same experience. Everywhere.
+This is a work in progress. If something is broken or you have an idea, open an issue. If you're a beta tester — thank you. Your feedback shapes what this becomes.
 
 ---
 
@@ -107,4 +80,4 @@ MIT — free to use, fork, and build on.
 
 ---
 
-*By [Jianda Monique](https://jiandamonique.github.io) · [Portfolio](https://jiandamonique.github.io) · [GitHub](https://github.com/jiandamonique)*
+*By [Jianda Monique](https://jiandamonique.github.io) — Jr. Data Scientist · Author · Artist · [github.com/jiandamonique](https://github.com/jiandamonique)*
