@@ -2,13 +2,16 @@
 
 > A quiet work companion for gig and remote workers.
 
-**Status: Work in progress. The beta testers are road testing.**
+**Status: Work in progress. Beta testers are road testing.**
+
+🟢 **[→ Open Jiminy Live](https://jiandamonique.github.io/jiminy/index.html)**
+📖 **[→ Read the README / About](https://github.com/jiandamonique/jiminy#readme)**
 
 ---
 
 ## What is Jiminy?
 
-Jiminy is a lightweight personal companion that lives in a single HTML file. No install. No login. No server. Open it on your desktop, your phone, Google Drive, iCloud, or host it here on GitHub Pages — it works the same everywhere, every platform.
+Jiminy is a lightweight personal companion that lives in a single HTML file. No install. No login. No server. Open it on your desktop, your phone, Google Drive, iCloud, or host it on GitHub Pages — it works the same everywhere, every platform.
 
 It gives you a live clock, a countdown timer, a private mantra, and a one-tap screen to hide it if someone walks up. That's it. Calm, affirming, present.
 
@@ -22,17 +25,15 @@ Remote workers, gig workers, anyone in a study or work environment who needs an 
 
 ## How to use it
 
-**Easiest way — just open it:**
-Download `jiminy.html` and one-click to open it in any browser. Nothing to install.
+**Easiest way — just open it:** [Launch Jiminy →](https://jiandamonique.github.io/jiminy/index.html) No install needed.
 
-**Host it yourself (free):**
-Enable GitHub Pages on this repo and share your personal URL.
+**Download it:** Grab `jiminy.html` and double-click to open in any browser.
 
-**On your phone:**
-Save the file to iCloud or Google Drive and open it in your mobile browser.
+**Host it yourself (free):** Enable GitHub Pages on a fork and share your personal URL.
 
-**Embed it in a dashboard:**
-Drop Jiminy into any existing dashboard or workspace you already use.
+**On your phone:** Save the file to iCloud or Google Drive and open it in your mobile browser.
+
+**Embed it in a dashboard:** Drop Jiminy into any existing dashboard or workspace you already use.
 
 ---
 
@@ -44,7 +45,7 @@ Drop Jiminy into any existing dashboard or workspace you already use.
 - Countdown timer with sound, silent, or vibrate alert
 - Quick timer presets: 5m, 10m, 15m, 30m, 1h
 - Four themes: warm, sage, slate, night
-- Pause screen — one tap to click away for privacy, shows a plain clock
+- Pause screen — one tap to hide for privacy, shows a plain clock
 
 ---
 
@@ -71,15 +72,7 @@ Plain HTML, CSS, and JavaScript. No frameworks. No dependencies. One file.
 
 ---
 
-## License
-
-MIT — free to use, fork, and build on.
-
-
-
----
-
-## your data & offline use
+## Your data & offline use
 
 Jiminy stores your theme and private phrase locally in your browser. This means:
 
@@ -93,15 +86,25 @@ Cross-device sync is on the roadmap for a future version.
 
 ---
 
-## where to use Jiminy
+## Where to use Jiminy
 
 Jiminy runs anywhere you can open a file or a link:
 
+- **Live link** — [jiandamonique.github.io/jiminy/index.html](https://jiandamonique.github.io/jiminy/index.html)
 - **Local file** — download and double-click on any computer
-- **GitHub Pages** — host free, share a link
 - **Google Drive or iCloud** — open from your cloud storage
 - **Notion** — embed the GitHub Pages link as a web bookmark or full-width embed
 - **New browser tab** — set it as your new tab page or just keep it pinned
 - **Any dashboard** — drop the link or file anywhere you already work
 
 Same file. Same experience. Everywhere.
+
+---
+
+## License
+
+MIT — free to use, fork, and build on.
+
+---
+
+*By [Jianda Monique](https://jiandamonique.github.io) · [Portfolio](https://jiandamonique.github.io) · [GitHub](https://github.com/jiandamonique)*
