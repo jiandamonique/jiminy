@@ -10,7 +10,7 @@
 
 ## What it is
 
-Jiminy is a single HTML file you open in a browser. No install. No login. No server. No subscription.
+Jiminy is single file HTML ally you access from a browser.  
 
 It gives you a live clock, a countdown timer, a private mantra you set once and stays, and a one-tap privacy screen for when someone walks up. That's the whole thing. Calm, present, yours.
 
