@@ -12,7 +12,7 @@
 
 Jiminy is single file HTML ally you access from a browser.  
 
-It gives you a live clock, a countdown timer, a private mantra you set once and stays, and a one-tap privacy screen for when someone walks up. That's the whole thing. Calm, present, yours.
+It gives you a live clock, different skins, a countdown timer, a private mantra you set once and stays, and a one-tap privacy screen for when someone walks up. That's the whole thing. Calm, present, yours.
 
 It was built for people who work in public or from home and need something steady on their screen — gig workers, remote workers, people studying in coffee shops, people who just need an anchor.
 
