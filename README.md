@@ -56,12 +56,6 @@ Jiminy keeps your theme and mantra in your browser's local storage. That means:
 
 ---
 
-## What it isn't
-
-Not an app store app. Not a subscription. Not connected to any server. Not storing anything beyond your own device. Not tracking you.
-
----
-
 ## Built with
 
 Vanilla HTML, CSS, and JavaScript. No frameworks. No dependencies. One file. Runs anywhere.
