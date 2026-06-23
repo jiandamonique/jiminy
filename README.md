@@ -58,7 +58,7 @@ Jiminy keeps your theme and mantra in your browser's local storage. That means:
 
 ## Built with
 
-Vanilla HTML, CSS, and JavaScript. No frameworks. No dependencies. One file. Runs anywhere.
+Vanilla HTML, CSS, and JavaScript. One file. Runs anywhere.
 
 ---
 
